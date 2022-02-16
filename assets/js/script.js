@@ -21,12 +21,12 @@ function HidePage() {
 	else { secondPage.style.display = 'block' };
 }
 
-// setTimeout(() => {
-// 	if (fistPage.style.display = 'block') {
-// 		fistPage.style.display = 'none';
-// 		secondPage.style.display = 'block';
-// 	};
-// }, 12500)
+setTimeout(() => {
+	if (fistPage.style.display = 'block') {
+		fistPage.style.display = 'none';
+		secondPage.style.display = 'block';
+	};
+}, 12500)
 
 // document.addEventListener('keydown', function (Key) {
 // 	const keyPressed = Key.key
