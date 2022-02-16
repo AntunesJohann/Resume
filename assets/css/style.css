@@ -1,0 +1,177 @@
+/*
+  Tudo aqui foi produzido por mim (Johann C. S. Antunes) fazendo uso do VSCode (depois de passar tempo até demais configurando),
+  Edge Browser, café e muita paciência (um simples CSS é mais trabalhoso que parece (⊙ˍ⊙)).
+
+  Tudo pode ser copiado, modificado e usado ao gosto do interessado, que deve somente concordar em dar os créditos apropriadamente.
+*/
+
+:root {
+  --fontColor: #e2e2e2;
+  --bgColor: #202020;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade-in-and-out {
+  from {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--fontColor);
+
+  background: var(--bgColor);
+}
+::selection {
+  color: white;
+  background-color: #494949;
+}
+
+#first-page {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 40vh 20vh 20vh 10vh 10vh;
+  grid-template-areas:
+    "EMPTY-0"
+    "name"
+    "continue"
+    "EMPTY-1"
+    "quote";
+  align-items: center;
+  justify-items: center;
+
+  text-align: center;
+
+  animation: fade-in 1.2s;
+  animation-timing-function: ease-out;
+}
+.name {
+  grid-area: name;
+  min-width: 300px;
+  font-size: 46pt;
+}
+.quote {
+  grid-area: quote;
+  max-width: 480px;
+  font-size: 12pt;
+}
+.quote-credits {
+  text-align: right;
+  font-size: 10pt;
+}
+.continue {
+  opacity: 0;
+  grid-area: continue;
+  width: 290px;
+  animation: fade-in-and-out 2s;
+  animation-delay: 2.5s;
+  animation-iteration-count: infinite;
+}
+
+#second-page {
+  display: none;
+
+  position: relative;
+
+  animation: fade-in 0.2s;
+  animation-timing-function: ease-out;
+}
+main {
+  position: absolute;
+
+  display: grid;
+  grid-template-columns: 33vw repeat(2, 30vw);
+  grid-template-rows: repeat(3, 30vh);
+  grid-template-areas:
+    "photo info experiences"
+    "photo academics softskills"
+    "photo hardskills languages";
+  column-gap: 2em;
+}
+.photo {
+  grid-area: photo;
+  /* position: relative; */
+  margin-top: 4%;
+  margin-left: 2%;
+  width: 29em;
+  height: auto;
+}
+.title {
+  font-size: 16pt;
+  text-align: center;
+  margin-top: 3%;
+}
+.text {
+  font-size: 12pt;
+  letter-spacing: 0.5pt;
+  line-height: 1.3em;
+  margin-top: 2%;
+}
+.info {
+  grid-area: info;
+}
+.academics {
+  grid-area: academics;
+}
+.hardskills {
+  grid-area: hardskills;
+  position: relative;
+  top: -10%;
+}
+.experiences {
+  grid-area: experiences;
+}
+.softskills {
+  grid-area: softskills;
+}
+.languages {
+  grid-area: languages;
+  position: relative;
+  top: 30%;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 54.5%;
+
+  font-size: 13pt;
+  text-align: center;
+
+  width: fit-content;
+  margin-bottom: 0.5em;
+}
+.outside-link:nth-last-child(n + 2) {
+  margin-right: 1em;
+}
+
+@media only screen and (max-width: 768px) {
+  #second-page {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "info"
+      "experiences"
+      "academics"
+      "softskills"
+      "hardskills"
+      "languages";
+  }
+}
