@@ -164,14 +164,52 @@ footer {
 }
 
 @media only screen and (max-width: 768px) {
-  #second-page {
+  main {
+    position: absolute;
+
+    display: grid;
     grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, auto) 25vh;
     grid-template-areas:
       "info"
-      "experiences"
+      "photo"
       "academics"
-      "softskills"
       "hardskills"
+      "softskills"
+      "experiences"
       "languages";
+    column-gap: 0;
+
+    text-align: center;
+  }
+  .photo {
+    grid-area: photo;
+    position: relative;
+    width: 30em;
+    left: 1%;
+    height: auto;
+  }
+  .info {
+    grid-area: info;
+  }
+  .academics {
+    grid-area: academics;
+  }
+  .hardskills {
+    grid-area: hardskills;
+  }
+  .experiences {
+    grid-area: experiences;
+  }
+  .softskills {
+    grid-area: softskills;
+  }
+  .languages {
+    grid-area: languages;
+  }
+
+  footer {
+    left: 50%;
+    transform: translate(-50%);
   }
 }
