@@ -35,6 +35,8 @@
   padding: 0;
 
   text-decoration: none;
+  font-size: 16px;
+
   font-family: Arial, Helvetica, sans-serif;
   color: var(--fontColor);
 
@@ -46,8 +48,10 @@
 }
 
 #first-page {
+  position: relative;
+
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 100vw;
   grid-template-rows: 40vh 20vh 20vh 10vh 10vh;
   grid-template-areas:
     "EMPTY-0"
@@ -91,125 +95,72 @@
 
   position: relative;
 
+  grid-template-columns: repeat(3, 33.3333%);
+  grid-template-rows: 24% 36% 36% 4%;
+  grid-template-areas:
+    "image info info"
+    "image academics softskills"
+    "experience hardskills languages"
+    "footer footer footer";
+
   animation: fade-in 0.2s;
   animation-timing-function: ease-out;
-}
-main {
-  position: absolute;
-
-  display: grid;
-  grid-template-columns: 33vw repeat(2, 30vw);
-  grid-template-rows: repeat(3, 30vh);
-  grid-template-areas:
-    "photo info experiences"
-    "photo academics softskills"
-    "photo hardskills languages";
-  column-gap: 2em;
-}
-.photo {
-  grid-area: photo;
-  /* position: relative; */
-  margin-top: 4%;
-  margin-left: 2%;
-  width: 29em;
-  height: auto;
 }
 .title {
   font-size: 16pt;
   text-align: center;
-  margin-top: 3%;
 }
 .text {
   font-size: 12pt;
-  letter-spacing: 0.5pt;
-  line-height: 1.3em;
-  margin-top: 2%;
+  margin-top: 0.5rem;
+}
+.grid-block {
+  padding: 2%;
+}
+.image {
+  grid-area: image;
+}
+.photo {
+  max-height: 100%;
+  max-width: 100%;
+  border-radius: 5%;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .info {
   grid-area: info;
+  text-align: center;
+}
+.info .title {
+  font-size: 18pt;
 }
 .academics {
   grid-area: academics;
 }
 .hardskills {
   grid-area: hardskills;
-  position: relative;
-  top: -10%;
 }
-.experiences {
-  grid-area: experiences;
+.experience {
+  grid-area: experience;
 }
 .softskills {
   grid-area: softskills;
 }
 .languages {
   grid-area: languages;
-  position: relative;
-  top: 30%;
 }
-
-footer {
-  position: fixed;
-  bottom: 0;
-  left: 54.5%;
-
+.footer {
+  grid-area: footer;
+  position: relative;
+  padding: 0.25rem;
   font-size: 13pt;
   text-align: center;
-
-  width: fit-content;
-  margin-bottom: 0.5em;
 }
-.outside-link:nth-last-child(n + 2) {
-  margin-right: 1em;
+.footer > .outside-link:nth-last-child(n + 2) {
+  margin-right: 1rem;
 }
 
 @media only screen and (max-width: 768px) {
-  main {
-    position: absolute;
-
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(6, auto) 25vh;
-    grid-template-areas:
-      "info"
-      "photo"
-      "academics"
-      "hardskills"
-      "softskills"
-      "experiences"
-      "languages";
-    column-gap: 0;
-
-    text-align: center;
-  }
-  .photo {
-    grid-area: photo;
-    position: relative;
-    width: 30em;
-    left: 1%;
-    height: auto;
-  }
-  .info {
-    grid-area: info;
-  }
-  .academics {
-    grid-area: academics;
-  }
-  .hardskills {
-    grid-area: hardskills;
-  }
-  .experiences {
-    grid-area: experiences;
-  }
-  .softskills {
-    grid-area: softskills;
-  }
-  .languages {
-    grid-area: languages;
-  }
-
-  footer {
-    left: 50%;
-    transform: translate(-50%);
-  }
 }

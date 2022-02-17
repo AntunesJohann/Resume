@@ -17,16 +17,16 @@ function HidePage() {
 	if (fistPage.style.display == 'none') { fistPage.style.display = 'block' }
 	else { fistPage.style.display = 'none' };
 
-	if (secondPage.style.display == 'block') { secondPage.style.display = 'none' }
-	else { secondPage.style.display = 'block' };
+	if (secondPage.style.display == 'grid') { secondPage.style.display = 'none' }
+	else { secondPage.style.display = 'grid' };
 }
 
-setTimeout(() => {
-	if (fistPage.style.display = 'block') {
-		fistPage.style.display = 'none';
-		secondPage.style.display = 'block';
-	};
-}, 12500)
+// setTimeout(() => {
+// 	if (fistPage.style.display = 'grid') {
+// 		fistPage.style.display = 'none';
+// 		secondPage.style.display = 'grid';
+// 	};
+// }, 12500)
 
 // document.addEventListener('keydown', function (Key) {
 // 	const keyPressed = Key.key
