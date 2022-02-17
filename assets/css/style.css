@@ -188,7 +188,7 @@
     position: relative;
 
     grid-template-columns: 100%;
-    grid-template-rows: fit-content(100%);
+    grid-template-rows: fit-content(12.5%);
     grid-template-areas:
       "info"
       "image"
