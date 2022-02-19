@@ -64,6 +64,8 @@
   justify-items: center;
   text-align: center;
 
+  cursor: pointer;
+
   animation: fade-in 1.2s;
   animation-timing-function: ease-out;
 }
