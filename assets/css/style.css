@@ -46,6 +46,9 @@
   color: white;
   background-color: #494949;
 }
+.checkbox-toggle-box {
+  display: none;
+}
 
 #first-page {
   position: relative;
@@ -55,19 +58,23 @@
     "EMPTY-0"
     "name"
     "continue"
-    "EMPTY-1"
+    "theme-change"
     "quote";
-  grid-template-columns: 100%;
+  grid-template-columns: 100vw;
   grid-template-rows: 40vh 20vh 20vh 10vh 10vh;
 
   align-items: center;
   justify-items: center;
   text-align: center;
 
-  cursor: pointer;
-
   animation: fade-in 1.2s;
   animation-timing-function: ease-out;
+}
+.hide-page {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
 }
 .name {
   grid-area: name;
@@ -90,6 +97,41 @@
   animation: fade-in-and-out 2s;
   animation-delay: 2.5s;
   animation-iteration-count: infinite;
+}
+.theme-change {
+  position: relative;
+
+  display: flex;
+  grid-area: theme-change;
+  align-items: center;
+
+  background-color: #0000;
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  transition: all 1s;
+}
+.theme-change::before {
+  content: "";
+  width: 2em;
+  height: 1em;
+  background-color: var(--fontColor);
+  border-radius: 1em;
+  margin-right: 0.25em;
+  transition: all 500ms;
+}
+.theme-change::after {
+  content: "";
+  position: absolute;
+  left: 0.1em;
+  width: 0.8em;
+  height: 0.8em;
+  background-color: var(--bgColor);
+  border-radius: 1em;
+  transition: all 500ms;
+}
+.switch:checked + .theme-change::after {
+  transform: translateX(125%);
 }
 
 #second-page {
@@ -130,6 +172,7 @@
   position: relative;
   top: 50%;
   left: 50%;
+  box-shadow: 0px 0px 10px #202020;
   transform: translate(-50%, -50%);
 }
 .info {
@@ -211,7 +254,7 @@
   }
 }
 @media only screen and (max-width: 425px) {
-  #first-page {
+  .presentation {
     height: 95vh;
     grid-template-rows: 33% 23% 20% 10% 10%;
   }

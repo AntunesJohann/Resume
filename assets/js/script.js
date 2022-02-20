@@ -5,28 +5,43 @@
   Tudo pode ser copiado, modificado e usado ao gosto do interessado, que deve somente concordar em dar os créditos apropriadamente.
 */
 
-const isMobile = navigator.userAgentData.mobile;
-const fistPage = document.getElementById('first-page');
+const rootElement = document.querySelector(':root');
+const theme_toggle = document.getElementById('theme_toggle');
+const firstPage = document.getElementById('first-page');
 const secondPage = document.getElementById('second-page');
 
-if (isMobile) {
+theme_toggle.addEventListener('change', () => {
+	if (theme_toggle.checked) {
+		rootElement.style.setProperty('--fontColor', '#e2e2e2');
+		rootElement.style.setProperty('--bgColor', '#202020');
+	} else {
+		rootElement.style.setProperty('--fontColor', '#202020');
+		rootElement.style.setProperty('--bgColor', '#e2e2e2');
+	}
+})
+
+if (navigator.userAgentData.mobile) {
 	document.getElementsByClassName('continue')[0].innerHTML = 'Toque em qualquer lugar para continuar';
 }
 
 function HidePage() {
-	if (fistPage.style.display == 'none') { fistPage.style.display = 'block' }
-	else { fistPage.style.display = 'none' };
-
-	if (secondPage.style.display == 'grid') { secondPage.style.display = 'none' }
-	else { secondPage.style.display = 'grid' };
+	if (secondPage.style.display === 'grid') {
+		secondPage.style.display = 'none'
+		firstPage.style.display = 'grid'
+	}
+	else {
+		secondPage.style.display = 'grid'
+		firstPage.style.display = 'none'
+	}
 }
 
-setTimeout(() => {
-	if (fistPage.style.display = 'grid') {
-		fistPage.style.display = 'none';
-		secondPage.style.display = 'grid';
-	};
-}, 12500)
+
+// setTimeout(() => {
+// 	if (firstPage.style.display = 'grid') {
+// 		firstPage.style.display = 'none';
+// 		secondPage.style.display = 'grid';
+// 	};
+// }, 12500)
 
 // document.addEventListener('keydown', function (Key) {
 // 	const keyPressed = Key.key

@@ -18,18 +18,21 @@
   </head>
 
   <body>
-    <section onclick="HidePage()" id="first-page">
+    <section id="first-page">
+      <div class="hide-page" onclick="HidePage()"></div>
       <p class="name">Johann C. S. Antunes</p>
       <div class="quote">
         <q>É tudo uma questão de interpretação dos momentos ao seu redor. Consciência é a chave</q>
         <p class="quote-credits">- Alguém <small>(em algum momento)</small></p>
       </div>
       <p class="continue">Clique em qualquer lugar para continuar</p>
+      <input type="checkbox" id="theme_toggle" class="switch checkbox-toggle-box" checked />
+      <label class="theme-change" for="theme_toggle">Tema escuro</label>
     </section>
     <!-- End of section of Id "first-page" -->
 
     <section id="second-page">
-      <div class="image grid-block">
+      <div class="image grid-block" onclick="HidePage()">
         <img class="photo" src="./assets/files/images/Eu-34.jpg" alt="Foto de Johann Antunes" />
       </div>
       <div class="info grid-block">
@@ -61,10 +64,10 @@
         <hr />
         <p class="text">
           Hardware de computadores, com experiência em planejamento, montagem e diagnóstico de problemas; <br />
-          PowerShell Scripting; <br />
+          Scripting com PowerShell; <br />
           Automação no Windows 10 e 11 (com PowerShell e PowerAutomate); <br />
-          Programação em C# e JS; <br />
-          HTML e CSS; <br />
+          Programação em C#; <br />
+          HTML, CSS e JavaScript; <br />
           Microsoft Office Suite; <br />
           Poweruser de Windows e Linux. <br />
         </p>
