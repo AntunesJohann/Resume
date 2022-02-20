@@ -222,6 +222,13 @@
   }
 }
 @media only screen and (max-width: 768px) {
+  .name {
+    font-size: 32pt;
+  }
+  .theme-change {
+    font-size: 13pt;
+  }
+
   #second-page {
     grid-template-areas:
       "info"
@@ -254,9 +261,15 @@
   }
 }
 @media only screen and (max-width: 425px) {
-  .presentation {
+  .first-page {
     height: 95vh;
-    grid-template-rows: 33% 23% 20% 10% 10%;
+    grid-template-rows: 33vw 23vw 20vw 10vw 10vw;
+  }
+  .theme-change {
+    font-size: 14pt;
+  }
+  .name {
+    font-size: 28pt;
   }
   .quote {
     padding-left: 2%;

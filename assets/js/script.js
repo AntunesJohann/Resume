@@ -36,12 +36,12 @@ function HidePage() {
 }
 
 
-// setTimeout(() => {
-// 	if (firstPage.style.display = 'grid') {
-// 		firstPage.style.display = 'none';
-// 		secondPage.style.display = 'grid';
-// 	};
-// }, 12500)
+setTimeout(() => {
+	if (firstPage.style.display = 'grid') {
+		firstPage.style.display = 'none';
+		secondPage.style.display = 'grid';
+	};
+}, 12500)
 
 // document.addEventListener('keydown', function (Key) {
 // 	const keyPressed = Key.key
