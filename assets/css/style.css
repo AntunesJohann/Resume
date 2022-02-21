@@ -100,9 +100,7 @@
   opacity: 0;
   grid-area: continue;
   width: 290px;
-  animation: fade-in-and-out 2s;
-  animation-delay: 2.5s;
-  animation-iteration-count: infinite;
+  animation: fade-in-and-out 2s 2.5s infinite;
 }
 .theme-change {
   position: relative;
