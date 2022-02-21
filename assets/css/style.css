@@ -40,11 +40,17 @@
   font-family: Arial, Helvetica, sans-serif;
   color: var(--fontColor);
 
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
   background: var(--bgColor);
 }
 ::selection {
   color: white;
   background-color: #494949;
+}
+::-webkit-scrollbar {
+  display: none;
 }
 .checkbox-toggle-box {
   display: none;
@@ -78,7 +84,7 @@
 }
 .name {
   grid-area: name;
-  min-width: 300px;
+  min-width: 315px;
   font-size: 46pt;
 }
 .quote {
@@ -223,7 +229,7 @@
 }
 @media only screen and (max-width: 768px) {
   .name {
-    font-size: 32pt;
+    font-size: 40pt;
   }
   .theme-change {
     font-size: 13pt;
@@ -266,10 +272,7 @@
     grid-template-rows: 33vw 23vw 20vw 10vw 10vw;
   }
   .theme-change {
-    font-size: 14pt;
-  }
-  .name {
-    font-size: 28pt;
+    font-size: 16pt;
   }
   .quote {
     padding-left: 2%;
