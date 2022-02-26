@@ -14,10 +14,12 @@ theme_toggle.addEventListener('change', () => {
 	if (theme_toggle.checked) {
 		rootElement.style.setProperty('--fontColor', '#e2e2e2');
 		rootElement.style.setProperty('--bgColor', '#202020');
+		rootElement.style.setProperty('--hTextColor', '#191919');
 	}
 	else {
 		rootElement.style.setProperty('--fontColor', '#202020');
 		rootElement.style.setProperty('--bgColor', '#e2e2e2');
+		rootElement.style.setProperty('--hTextColor', '#d0d0d0');
 	}
 })
 

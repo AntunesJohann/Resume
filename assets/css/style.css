@@ -8,6 +8,7 @@
 :root {
   --fontColor: #e2e2e2;
   --bgColor: #202020;
+  --hTextColor: #191919;
 }
 
 @keyframes fade-in {
@@ -30,12 +31,15 @@
   }
 }
 
+html {
+  font-size: 62.5%;
+}
 * {
   margin: 0;
   padding: 0;
 
   text-decoration: none;
-  font-size: 16px;
+  font-size: 1.6rem;
 
   font-family: Arial, Helvetica, sans-serif;
   color: var(--fontColor);
@@ -53,6 +57,9 @@
   display: none;
 }
 .checkbox-toggle-box {
+  display: none;
+}
+.hover-help-text {
   display: none;
 }
 
@@ -79,22 +86,22 @@
 .hide-page {
   position: absolute;
   opacity: 0;
+  z-index: 1;
   width: 100%;
   height: 100%;
 }
 .name {
   grid-area: name;
   min-width: 315px;
-  font-size: 46pt;
+  font-size: 6rem;
 }
 .quote {
   grid-area: quote;
   max-width: 480px;
-  font-size: 12pt;
 }
 .quote-credits {
   text-align: right;
-  font-size: 10pt;
+  font-size: 1.2rem;
 }
 .continue {
   opacity: 0;
@@ -104,6 +111,7 @@
 }
 .theme-change {
   position: relative;
+  z-index: 2;
 
   display: flex;
   grid-area: theme-change;
@@ -114,6 +122,16 @@
   -webkit-user-select: none;
   user-select: none;
   transition: all 1s;
+}
+.theme-change:hover .help-text_1 {
+  display: block;
+  position: absolute;
+  left: -25%;
+  bottom: 150%;
+  width: 150%;
+  background-color: var(--hTextColor);
+  border-radius: 1rem;
+  animation: fade-in 333ms;
 }
 .theme-change::before {
   content: "";
@@ -148,22 +166,21 @@
     "image academics softskills"
     "experience hardskills languages"
     "footer footer footer";
-  grid-template-columns: repeat(3, 33.3333%);
-  grid-template-rows: repeat(4, auto);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 33%) 5%;
 
   animation: fade-in 0.2s;
   animation-timing-function: ease-out;
 }
 .grid-block {
-  padding: 8px;
+  padding: 0.8rem;
   min-height: fit-content;
 }
 .grid-block > .title {
-  font-size: 16pt;
+  font-size: 2.1rem;
   text-align: center;
 }
 .grid-block > .text {
-  font-size: 12pt;
   margin-top: 0.5rem;
 }
 .image {
@@ -172,7 +189,7 @@
 .image > .photo {
   max-width: 300px;
   height: auto;
-  border-radius: 5%;
+  border-radius: 2rem;
   position: relative;
   top: 50%;
   left: 50%;
@@ -184,7 +201,7 @@
   text-align: center;
 }
 .info > .title {
-  font-size: 18pt;
+  font-size: 2.4rem;
 }
 .academics {
   grid-area: academics;
@@ -204,9 +221,7 @@
 .footer {
   grid-area: footer;
   position: relative;
-  padding: 0.25rem;
-  margin-top: 0.5rem;
-  font-size: 13pt;
+  font-size: 1.7rem;
   text-align: center;
 }
 .footer > .outside-link:nth-last-child(n + 2) {
@@ -222,15 +237,15 @@
       "softskills languages"
       "footer footer";
     grid-template-columns: repeat(2, 50%);
-    grid-template-rows: repeat(4, 25.5%) 3.5%;
+    grid-template-rows: repeat(4, 25%) 4%;
   }
 }
 @media only screen and (max-width: 768px) {
   .name {
-    font-size: 40pt;
+    font-size: 5.3rem;
   }
   .theme-change {
-    font-size: 13pt;
+    font-size: 1.7rem;
   }
 
   #second-page {
@@ -247,8 +262,7 @@
     grid-template-rows: fit-content(12.5%);
   }
   .grid-block {
-    padding: 5%;
-    margin-bottom: 5%;
+    padding-bottom: 2.4rem;
   }
   .grid-block > .text {
     text-align: center;
@@ -257,11 +271,10 @@
     content: url(./../files/images/Eu-11.jpg);
     max-width: 85%;
     height: auto;
-    border-radius: 10%;
+    border-radius: 5rem;
   }
   .footer {
-    margin-top: 0;
-    margin-bottom: 0;
+    padding-bottom: 0.8rem;
   }
 }
 @media only screen and (max-width: 425px) {
@@ -270,7 +283,7 @@
     grid-template-rows: 33vw 23vw 20vw 10vw 10vw;
   }
   .theme-change {
-    font-size: 16pt;
+    font-size: 2.1rem;
   }
   .quote {
     padding-left: 2%;
