@@ -126,9 +126,10 @@ html {
 .theme-change:hover .help-text_1 {
   display: block;
   position: absolute;
-  left: -25%;
   bottom: 150%;
-  width: 150%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 19.5rem;
   background-color: var(--hTextColor);
   border-radius: 1rem;
   animation: fade-in 333ms;
@@ -185,16 +186,29 @@ html {
 }
 .image {
   grid-area: image;
+  position: relative;
 }
 .image > .photo {
-  max-width: 300px;
-  height: auto;
-  border-radius: 2rem;
   position: relative;
   top: 50%;
   left: 50%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 2rem;
+  cursor: pointer;
   box-shadow: 0px 0px 10px #202020;
   transform: translate(-50%, -50%);
+}
+.photo:hover + .help-text_2 {
+  display: block;
+  position: absolute;
+  width: 16.5rem;
+  left: 50%;
+  text-align: center;
+  transform: translateX(-50%);
+  background-color: var(--hTextColor);
+  border-radius: 1rem;
+  animation: fade-in 400ms;
 }
 .info {
   grid-area: info;
