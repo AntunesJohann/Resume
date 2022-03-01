@@ -25,6 +25,7 @@ theme_toggle.addEventListener('change', () => {
 
 if (navigator.userAgentData.mobile) {
 	document.getElementsByClassName('continue')[0].innerHTML = 'Toque em qualquer lugar para continuar';
+	document.getElementsByClassName('help-text_1')[0].innerHTML = 'Toque para mudar o tema';
 }
 
 function HidePage() {
