@@ -1,2 +1,1 @@
-# Meu currículo em formato de página web. Decente para uma madrugada de estudos ^^
-## LEMBRAR: Escrever um README de verdade.
+# Meu currículo em formato de página web. Minimamente decente para uma "meia-madrugada" de trabalho.
